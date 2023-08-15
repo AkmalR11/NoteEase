@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.ar.noteease.MainActivity;
 import com.ar.noteease.R;
 
 import java.util.ArrayList;

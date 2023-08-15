@@ -1,5 +1,20 @@
 package com.ar.noteease;
+
 import static com.ar.noteease.R.string.alert_delete_acc;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,31 +25,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ar.noteease.Adapters.NotesListAdapter;
 import com.ar.noteease.Database.RoomDB;
 import com.ar.noteease.Models.Notes;
+import com.ar.noteease.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
 
@@ -210,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 case R.id.delete:
                     //memunculkan alert dialog
                     builder = new AlertDialog.Builder(this);
-//                    builder.setMessage("Konfirmasi Hapus").setTitle(R.string.title);
+                    // builder.setMessage("Konfirmasi Hapus").setTitle(R.string.title);
                     //jika true
                     builder.setMessage("Pesan akan dihapus selamanya, Anda yakin?").setCancelable(false)
                             .setPositiveButton(R.string.hapus, new DialogInterface.OnClickListener() {
@@ -249,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     //fungsi halaman privacy policy dan about
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.privacypolicy){
-            String url = "https://docs.google.com/document/d/1BfiRCJdEaHYqGWkiUCvYq8NZsw9_-ie8SsO01q_eN4w/edit?usp=sharing";
+            String url = "https://docs.google.com/document/d/1ADQfmyjLKB0uszWGoibePmFlcPL8K-u9pqmEnQKbXm0/edit?usp=sharing";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);
