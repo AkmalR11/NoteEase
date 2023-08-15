@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="btn_style" parent="Widget.AppCompat.Button">
+        <item name="fontFamily">@font/comfortaa_regular</item>
+        <item name="android:background">@drawable/bg_button_style</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/dimen14</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="btn_viewpage">
+        <item name="fontFamily">@font/comfortaa_regular</item>
+        <item name="android:background">@drawable/bg_button_black</item>
+        <item name="android:textColor">@color/yellow_gedang</item>
+        <item name="android:textSize">@dimen/dimen14</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

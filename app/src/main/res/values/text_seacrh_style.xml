@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="searchStyle" parent="Widget.AppCompat.SearchView">
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/yellow_gedang</item>
+        <item name="android:textColorHint">@color/yellow_gedang</item>
+        <item name="editTextColor">@color/yellow_gedang</item>
+        <item name="tint">@color/yellow_gedang</item>
+    </style>
+</resources>

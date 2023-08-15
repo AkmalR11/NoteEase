@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">NoteEase</string>
+    <string name="get_started">Mulai !</string>
+    <string name="skip">Lewati</string>
+    <string name="next">Selanjutnya</string>
+    <string name="textview">Text View</string>
+    <string name="selamat_datang_judul">Selamat datang di NoteEase</string>
+    <string name="selamat_datang_intro">Aplikasi yang menyimpan catatan</string>
+    <string name="buat_catatan_judul">Buat catatan Anda</string>
+    <string name="buat_catatan_intro">NoteEase dapat menyimpan catatan Anda</string>
+    <string name="aman_dan_terpercaya_judul">Aman dan Terpercaya</string>
+    <string name="aman_dan_terpercaya_intro">Pihak NoteEase TIDAK mendapat data apapun dari Anda.</string>
+    <string name="cancel">Cancel</string>
+    <string name="decline">Decline</string>
+    <string name="accept">Accept</string>
+    <string name="alert_delete">Yakin untuk menghapus Note?</string>
+    <string name="title">Title</string>
+    <string name="alert_delete_cancel">Catatan batal dihapus!</string>
+    <string name="alert_delete_acc">Catatan telah dihapus!</string>
+    <string name="batal">Batal</string>
+    <string name="hapus">Hapus</string>
+</resources>
