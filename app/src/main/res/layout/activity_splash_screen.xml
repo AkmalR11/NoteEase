@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/ic_akmal_apps_bg_grey">
+    android:background="@drawable/ic_splash_screen">
 
     <ImageView
         android:layout_width="200dp"
