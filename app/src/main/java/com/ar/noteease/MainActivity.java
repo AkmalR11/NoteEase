@@ -29,7 +29,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ar.noteease.Adapters.NotesListAdapter;
 import com.ar.noteease.Database.RoomDB;
 import com.ar.noteease.Models.Notes;
-import com.ar.noteease.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -175,12 +174,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         popupMenu.inflate(R.menu.popup_menu);
         popupMenu.show();
     }
-
     @SuppressLint({"NotifyDataSetChanged", "NonConstantResourceId"})
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()){
-            //menampilkan star/pin
+            //Menampilkan pin
             case R.id.pin:
                 if (selectedNote.isPinned()){
                     database.mainDAO().pin(selectedNote.getID(), false);
@@ -196,39 +194,39 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 notesListAdapter.notifyDataSetChanged();
                 return true;
 
-                //fungsi pindah ke layout untuk edit data
-                case R.id.edit:
+            //fungsi pindah ke layout untuk edit data
+            case R.id.edit:
 
-                    Intent intent = new Intent(MainActivity.this, NotesTakerActivity.class);
-                    intent.putExtra("old_note", selectedNote);
-                    startActivityForResult(intent, 102);
-                    return true;
+                Intent intent = new Intent(MainActivity.this, NotesTakerActivity.class);
+                intent.putExtra("old_note", selectedNote);
+                startActivityForResult(intent, 102);
+                return true;
 
-                    //fungsi hapus data
-                case R.id.delete:
-                    //memunculkan alert dialog
-                    builder = new AlertDialog.Builder(this);
-                    // builder.setMessage("Konfirmasi Hapus").setTitle(R.string.title);
-                    //jika true
-                    builder.setMessage("Pesan akan dihapus selamanya, Anda yakin?").setCancelable(false)
-                            .setPositiveButton(R.string.hapus, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            database.mainDAO().delete(selectedNote);
-                            notes.remove(selectedNote);
-                            notesListAdapter.notifyDataSetChanged();
-                            Toast.makeText(MainActivity.this, alert_delete_acc, Toast.LENGTH_SHORT).show();
-                        }
-                        //jika false
-                    }).setNegativeButton(R.string.batal, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Toast.makeText(MainActivity.this, R.string.alert_delete_cancel, Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.setTitle("Konfirmasi Hapus");
-                    alertDialog.show();
+            //fungsi hapus data
+            case R.id.delete:
+                //memunculkan alert dialog
+                builder = new AlertDialog.Builder(this);
+                //builder.setMessage("Konfirmasi Hapus").setTitle(R.string.title);
+                //jika true
+                builder.setMessage("Pesan akan dihapus selamanya, Anda yakin?").setCancelable(false)
+                        .setPositiveButton(R.string.hapus, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                database.mainDAO().delete(selectedNote);
+                                notes.remove(selectedNote);
+                                notesListAdapter.notifyDataSetChanged();
+                                Toast.makeText(MainActivity.this, alert_delete_acc, Toast.LENGTH_SHORT).show();
+                            }
+                            //jika false
+                        }).setNegativeButton(R.string.batal, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(MainActivity.this, R.string.alert_delete_cancel, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.setTitle("Konfirmasi Hapus");
+                alertDialog.show();
 
             default:
                 return false;
@@ -247,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     //fungsi halaman privacy policy dan about
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.privacypolicy){
-            String url = "https://docs.google.com/document/d/1ADQfmyjLKB0uszWGoibePmFlcPL8K-u9pqmEnQKbXm0/edit?usp=sharing";
+            String url = "https://docs.google.com/document/d/1BfiRCJdEaHYqGWkiUCvYq8NZsw9_-ie8SsO01q_eN4w/edit?usp=sharing";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);

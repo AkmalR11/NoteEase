@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.ar.noteease.MainActivity;
 import com.google.android.material.tabs.TabLayout;
 import com.ar.noteease.R;
 
@@ -44,7 +45,6 @@ public class IntroActivity extends AppCompatActivity {
 
 
         //pengecekan sudah dibuka atau belum
-
         if (restorePrefData()) {
 
             Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class );
